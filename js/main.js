@@ -47,8 +47,4 @@ applyBtn.addEventListener("click", applyFilters);
 resetBtn.addEventListener("click", resetFilters);
 
 searchInput.addEventListener("input", applyFilters);
-
-blockFilter.addEventListener("change", applyFilters);
-statusFilter.addEventListener("change", applyFilters);
-
 renderResults(students);

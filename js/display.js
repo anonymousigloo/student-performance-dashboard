@@ -36,16 +36,16 @@ export function displayStudents(students) {
 }
 
 export function displaySummary(students) {
-  const classAverageEl = document.getElementById("classAverage");
-  const passingCountEl = document.getElementById("passingCount");
-  const displayedCountEl = document.getElementById("displayedCount");
-  const topStudentEl = document.getElementById("topStudent");
+  const classAverage = document.getElementById("classAverage");
+  const passingValue = document.getElementById("passingCount");
+  const displayedValue = document.getElementById("displayedCount");
+  const topStudentValue = document.getElementById("topStudent");
 
   if (students.length === 0) {
-    classAverageEl.textContent = "0.00";
-    passingCountEl.textContent = "0";
-    displayedCountEl.textContent = "0";
-    topStudentEl.textContent = "—";
+    classAverage.textContent = "0.00";
+    passingValue.textContent = "0";
+    displayedValue.textContent = "0";
+    topStudentValue.textContent = "—";
     return;
   }
 
@@ -59,10 +59,10 @@ export function displaySummary(students) {
     return calculateFinalGrade(current) > calculateFinalGrade(top) ? current : top;
   });
 
-  classAverageEl.textContent = average.toFixed(2);
-  passingCountEl.textContent = passingCount;
-  displayedCountEl.textContent = students.length;
-  topStudentEl.textContent = topStudent.name;
+  classAverage.textContent = average.toFixed(2);
+  passingValue.textContent = passingCount;
+  displayedValue.textContent = students.length;
+  topStudentValue.textContent = topStudent.name;
 }
 
 export function displayMessage(message) {
