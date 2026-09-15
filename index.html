@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Performance Dashboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <header class="page-header">
+    <p class="eyebrow">31-ITE Group Records</p>
+    <h1>Student Performance Dashboard</h1>
+  </header>
+
+  <main>
+    <section class="controls" aria-label="Search and filters">
+      <div class="control-group control-search">
+        <label for="searchInput">Search by name</label>
+        <input type="text" id="searchInput" placeholder="Enter student name" />
+      </div>
+
+      <div class="control-group">
+        <label for="blockFilter">Block</label>
+        <select id="blockFilter">
+          <option value="All">All</option>
+          <option value="31-ITE-01">31-ITE-01</option>
+          <option value="31-ITE-02">31-ITE-02</option>
+          <option value="31-ITE-03">31-ITE-03</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="statusFilter">Status</label>
+        <select id="statusFilter">
+          <option value="All">All</option>
+          <option value="Excellent">Excellent</option>
+          <option value="Passed">Passed</option>
+          <option value="Needs Improvement">Needs Improvement</option>
+          <option value="Failed">Failed</option>
+        </select>
+      </div>
+
+      <div class="control-group control-actions">
+        <button id="applyBtn" type="button">Apply Filters</button>
+        <button id="resetBtn" type="button" class="secondary">Reset</button>
+      </div>
+    </section>
+
+    <section class="summary" aria-label="Class summary">
+      <div class="stat">
+        <span class="stat-label">Class Average</span>
+        <span class="stat-value" id="classAverage">0.00</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Passing</span>
+        <span class="stat-value" id="passingCount">0</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Displayed</span>
+        <span class="stat-value" id="displayedCount">0</span>
+      </div>
+      <div class="stat">
+        <span class="stat-label">Top Student</span>
+        <span class="stat-value" id="topStudent">—</span>
+      </div>
+    </section>
+
+    <p id="messageArea" class="message-area"></p>
+
+    <section id="studentList" class="student-list" aria-label="Student records">
+      <!-- Student cards rendered here by display.js -->
+    </section>
+  </main>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
